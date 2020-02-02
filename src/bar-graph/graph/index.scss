@@ -1,0 +1,15 @@
+.bar-graph {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.bar {
+  fill: #2196F3;
+  stroke: #E1F5FE;
+  stroke-width: 0.2px;
+  cursor: pointer;
+
+  &:hover {
+    fill: #E1F5FE;
+  }
+}
