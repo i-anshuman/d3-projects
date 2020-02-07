@@ -15,7 +15,7 @@ class ScatterPlot extends Component {
                   .attr('width', width)
                   .attr('height', height);
 
-    const padding = 35;
+    const padding = 60;
     const years = dataset.map(d => {
       const date = new Date();
       date.setFullYear(d.Year);
@@ -61,8 +61,8 @@ class ScatterPlot extends Component {
             nationality: d.Nationality,
             allegation: d.Doping,
             coords: {
-              x: xScale(years[i][1]),
-              y: yScale(times[i])
+              x: d3.event.pageX,
+              y: d3.event.pageY
             }
           });
        })
@@ -79,6 +79,39 @@ class ScatterPlot extends Component {
        .attr('transform', `translate(${padding}, 0)`)
        .attr('id', 'y-axis')
        .call(yAxis);
+
+    svg.append('text')
+      .attr('x', -315)
+      .attr('y', 15)
+      .attr('transform', 'rotate(-90)')
+      .text('Time in Minutes');
+
+    const color = d3.scaleOrdinal()
+                    .domain(["No doping allegations", "Riders with doping allegations"])
+                    .range(["#ff7f0e", "#1f77b4"]);
+
+    const legend = svg.selectAll('.legend')
+                      .data(color.domain())
+                      .enter()
+                      .append("g")
+                      .attr("class", "legend")
+                      .attr("id", "legend")
+                      .attr("transform", (d, i) => {
+                        return `translate(0, ${(height/2 - i * 20)})`;
+                      });
+
+    legend.append("rect")
+      .attr("x", width - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+    legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(d => d);
   }
 
   componentDidMount() {
