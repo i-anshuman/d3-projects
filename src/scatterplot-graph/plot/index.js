@@ -50,7 +50,7 @@ class ScatterPlot extends Component {
        .attr('cy', (d, i) => yScale(times[i]))
        .attr('r', 6)
        .attr('data-xvalue', d => d.Year)
-       .attr('data-yvalue', d => d.Time)
+       .attr('data-yvalue', (d, i) => times[i])
        .attr('class', 'dot')
        .style('fill', d => d.Doping !== '' ? 'rgba(31, 119, 180, 0.7)' : 'rgba(255, 127, 14, 0.7)')
        .on('mouseover', (d, i) => {
