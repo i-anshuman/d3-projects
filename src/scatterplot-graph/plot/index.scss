@@ -1,0 +1,20 @@
+svg {
+  margin-top: 15px;
+
+  .dot {
+    cursor: pointer;
+    stroke: #000;
+  }
+
+  .not-alleged {
+    fill: rgba(255, 127, 14, 0.8);
+  }
+
+  .alleged {
+    fill: rgba(31, 119, 180, 0.8);
+  }
+
+  text {
+    fill: #000;
+  }
+}
