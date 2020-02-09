@@ -30,16 +30,14 @@ class ScatterplotGraph extends Component {
       />
     }
     return (
-      <div className="container">
-        <div className="wrapper">
-          <div className="title">
-            <h1 id="title">Doping in Professional Bicycle Racing</h1>
-            <h3>35 Fastest times up Alpe d'Huez</h3>
-          </div>
-          {tooltip}
-          <ScatterPlot width={850} height={500} desc={this.handleDescription}/>
+      <section className="wrapper">
+        <div className="title">
+          <h1 id="title">Doping in Professional Bicycle Racing</h1>
+          <h3>35 Fastest times up Alpe d'Huez</h3>
         </div>
-      </div>
+        {tooltip}
+        <ScatterPlot width={850} height={500} desc={this.handleDescription}/>
+      </section>
     );
   }
 }

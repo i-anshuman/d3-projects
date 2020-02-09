@@ -1,11 +1,5 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
 .wrapper {
+  background-color: #fff;
   margin: 20px auto;
   width: 900px;
   height: 600px;
@@ -14,7 +8,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 2px 2px 2px #ccc;
+  box-shadow: 2px 2px 20px #000;
 
   .title {
     text-align: center;

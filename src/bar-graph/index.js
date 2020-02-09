@@ -46,22 +46,20 @@ class BarGraph extends Component {
     }
 
     return (
-      <div className="container">
-        <section className="wrapper">
-          <h1 id="title" className="title">United States GDP </h1>
-          {tooltip}
-          <Graph width={800} height={400} dataGDP={this.handleGDPData}/>
-          <span className="caption">
-            More Information:&nbsp;
-            <a href="http://www.bea.gov/national/pdf/nipaguid.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              http://www.bea.gov/national/pdf/nipaguid.pdf
-            </a>
-          </span>
-        </section>
-      </div>
+      <section className="wrapper">
+        <h1 id="title" className="title">United States GDP </h1>
+        {tooltip}
+        <Graph width={800} height={400} dataGDP={this.handleGDPData}/>
+        <span className="caption">
+          More Information:&nbsp;
+          <a href="http://www.bea.gov/national/pdf/nipaguid.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            http://www.bea.gov/national/pdf/nipaguid.pdf
+          </a>
+        </span>
+      </section>
     );
   }
 }
