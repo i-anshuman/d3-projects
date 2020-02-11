@@ -1,0 +1,19 @@
+.heatmap {
+  padding: 0 10px;
+  overflow: auto;
+}
+
+.cell {
+  cursor: pointer;
+
+  &:hover {
+    stroke: #000;
+    stroke-width: 2;
+  }
+}
+
+.legend {
+  rect {
+    stroke: #000;
+  }
+}
